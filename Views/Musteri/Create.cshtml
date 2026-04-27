@@ -1,0 +1,67 @@
+﻿@model HowToMakeCodeFirst.Models.Musteri
+
+
+<div class="container mt-4">
+	<h2>Yeni Müşteri EKle</h2>
+	<hr />
+
+	<form asp-action="Create" method="post" class="w-50">
+
+		<div class="mb-3">
+			<label asp-for="MusteriAd" class="form-label">Ad</label>
+			<input asp-for="MusteriAd" class="form-control" placeholder="Müşterinin Adı"/>
+		</div>
+		<div class="mb-3">
+
+			<label asp-for="MusteriSoyad" class="form-label">Soyad</label>
+			<input asp-for="MusteriSoyad" class="form-control" placeholder="Müşterinin Soyadı" />
+		</div>
+
+		<div class="mb-3">
+			<label asp-for="MusteriTcNo" class="form-label">TC No</label>
+			<input asp-for="MusteriTcNo" class="form-control" required/>
+		</div>
+		<div class="mb-3">
+			<label asp-for="MusteriTelNo" class="form-label">Telefon Numaranız</label>
+			<input asp-for="MusteriTelNo" class="form-control" required />
+		</div>
+
+		<div class="mt-4">
+			<button type="submit" class="btn btn-success">Sisteme Kaydet</button>
+			<a asp-action="Index" class="btn btn-secondary ms-2">Listeye Dön</a>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div> 
