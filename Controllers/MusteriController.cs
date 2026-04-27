@@ -39,5 +39,36 @@ namespace HowToMakeCodeFirst.Controllers
             }
             return View(yeniMusteri);
         }
+
+        public IActionResult Edit(int id)
+        {
+            var musteri = _context.Musteriler.Where(x=>x.MusteriId == id).FirstOrDefault();
+            return View(musteri);
+
+
+        }
+        [HttpPost]
+        public IActionResult Edit(Musteri EditedMusteri, Musteri gizli=null)
+        {
+            if(gizli==null)
+            {
+
+                gizli=_context.Musteriler.Where(p=>p.MusteriId==EditedMusteri.MusteriId).FirstOrDefault();
+            }
+            else
+            {
+                _context.Musteriler.Attach(gizli);
+            }
+            if (gizli != null)
+            {
+                gizli.MusteriId =EditedMusteri.MusteriId;
+                gizli.MusteriAd=EditedMusteri.MusteriAd;
+                gizli.MusteriSoyad = EditedMusteri.MusteriSoyad;
+                gizli.MusteriTcNo = EditedMusteri.MusteriTcNo;
+                gizli.MusteriTelNo = EditedMusteri.MusteriTelNo;
+                _context.SaveChanges();
+            }
+            return View();
+        }
     }
 }
