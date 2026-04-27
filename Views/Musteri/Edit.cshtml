@@ -1,5 +1,29 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model HowToMakeCodeFirst.Models.Musteri
+
+<h2>Müşteri Bİlgilerini Güncelle</h2>
+
+
+<form asp-action="Edit" method="post">
+	<input type="hidden" name="gizli.MusteriId" value="@Model.MusteriId" />
+	<input type="hidden" name="gizli.MusteriAd" value="@Model.MusteriAd" />
+	<input type="hidden" name="gizli.MusteriSoyad" value="@Model.MusteriSoyad" />
+	<input type="hidden" name="gizli.MusteriTcNo" value="@Model.MusteriTcNo" />
+	<input type="hidden" name="gizli.MusteriTelNo" value="@Model.MusteriTelNo" />
+
+	<div class="form-grorup">
+		<label asp-for="MusteriAd" class="form-label"></label>
+		<input asp-for="MusteriAd" class="form-control" />
+	</div>
+	<div class="form-grorup">
+		<label asp-for="MusteriSoyad" class="form-label"></label>
+		<input asp-for="MusteriSoyad" class="form-control" />
+	</div>
+	<div class="form-grorup">
+		<label asp-for="MusteriTcNo" class="form-label"></label>
+		<input asp-for="MusteriTcNo" class="form-control" />
+	</div>
+	<div class="form-grorup">
+		<label asp-for="MusteriTelNo" class="form-label"></label>
+		<input asp-for="MusteriTelNo" class="form-control" />
+	</div>
+</form>
