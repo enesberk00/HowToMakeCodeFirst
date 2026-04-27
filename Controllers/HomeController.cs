@@ -1,4 +1,4 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using HowToMakeCodeFirst.Models;
 using Microsoft.AspNetCore.Mvc;
 
