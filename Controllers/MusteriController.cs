@@ -76,5 +76,18 @@ namespace HowToMakeCodeFirst.Controllers
                 return View(EditedMusteri);
 
         }
+        [HttpPost]
+        public IActionResult Delete(int id) 
+        {
+            var DeletedMusteri=_context.Musteriler.FirstOrDefault(m=>m.MusteriId==id);
+            if(DeletedMusteri!=null)
+            {
+                _context.Musteriler.Remove(DeletedMusteri);
+                _context.SaveChanges();
+
+            }
+            return RedirectToAction("Index");
+        }   
+            
     }
 }

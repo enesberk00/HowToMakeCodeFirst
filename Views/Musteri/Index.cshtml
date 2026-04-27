@@ -31,7 +31,10 @@
                     <td>@musteri.MusteriKayıtTarihi.ToString("dd.MM.yyyy")</td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@musteri.MusteriId" class="btn btn-warning btn-sm">Güncelle</a>
-                        <a asp-action="Delete" asp-route-id="@musteri.MusteriId" class="btn btn-danger btn-sm" onclick="return confirm('Silmek istediğinize emin misiniz?')">Sil</a>
+						<form asp-action="Delete" asp-route-id="@musteri.MusteriId" method="post" class="d-inline">
+                            <button type="submit" class="btn btn-danger btn-sm">Sil</button>
+                        </form>
+                        
                     </td>
 
                 </tr>
